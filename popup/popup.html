@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AdWall</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="../icons/icon32.png" alt="" width="20" height="20">
+      <span>AdWall</span>
+    </div>
+    <label class="switch" title="Turn AdWall on or off everywhere">
+      <input type="checkbox" id="global">
+      <span class="track"></span>
+    </label>
+  </header>
+
+  <main>
+    <section class="count">
+      <div class="num" id="count">0</div>
+      <div class="label">requests blocked on this page</div>
+    </section>
+
+    <section class="site" id="site">
+      <div class="host" id="host">—</div>
+      <div class="row">
+        <span id="siteState">Blocking on this site</span>
+        <label class="switch small">
+          <input type="checkbox" id="siteToggle">
+          <span class="track"></span>
+        </label>
+      </div>
+      <div class="row">
+        <span>Block cookie banners</span>
+        <label class="switch small">
+          <input type="checkbox" id="annoyances">
+          <span class="track"></span>
+        </label>
+      </div>
+    </section>
+
+    <button id="zap" class="primary">Block an element…</button>
+    <button id="reset" class="ghost" hidden>Clear <span id="zapCount">0</span> custom blocks on this site</button>
+    <button id="dashboard" class="ghost">Dashboard &amp; settings</button>
+
+    <p class="note" id="note"></p>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

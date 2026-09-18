@@ -1,0 +1,19 @@
+# Downloaded filter lists (re-fetched by tools/build.py)
+tools/.cache/
+
+# Written by the browser when the unpacked extension is loaded
+_metadata/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local test output
+*.log
+edge-profile-*/

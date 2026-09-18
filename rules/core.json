@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "doubleclick.net", "googlesyndication.com", "googleadservices.com", "adservice.google.com",
+        "google-analytics.com", "2mdn.net", "adnxs.com", "adsrvr.org", "taboola.com", "outbrain.com",
+        "criteo.com", "criteo.net", "pubmatic.com", "rubiconproject.com", "openx.net", "amazon-adsystem.com",
+        "moatads.com", "scorecardresearch.com", "quantserve.com", "adform.net", "smartadserver.com",
+        "casalemedia.com", "indexww.com", "bidswitch.net", "sharethrough.com", "teads.tv", "yieldmo.com",
+        "33across.com", "media.net", "contextweb.com", "lijit.com", "sovrn.com", "triplelift.com", "3lift.com",
+        "gumgum.com", "spotxchange.com", "springserve.com", "advertising.com", "zedo.com", "mgid.com",
+        "revcontent.com", "zergnet.com", "adskeeper.com", "a-ads.com", "coinzilla.com", "bidvertiser.com",
+        "infolinks.com", "chitika.com", "adition.com", "serving-sys.com", "flashtalking.com", "innovid.com",
+        "adsafeprotected.com", "doubleverify.com", "adroll.com", "bluekai.com", "krxd.net", "rlcdn.com",
+        "mathtag.com", "yieldlab.net", "stickyadstv.com", "undertone.com", "adkernel.com", "adtelligent.com",
+        "onetag-sys.com", "sonobi.com", "emxdgt.com", "lkqd.net", "connatix.com", "primis.tech", "vidazoo.com",
+        "unrulymedia.com", "smaato.net", "inmobi.com", "ads.yahoo.com", "ads-twitter.com", "hotjar.com",
+        "clarity.ms", "mouseflow.com", "adcolony.com", "adtech.de", "yieldmanager.com", "adblade.com",
+        "content.ad", "nativo.com", "ezoic.net", "ezodn.com", "adthrive.com", "mediavine.com", "raptive.com",
+        "freestar.io", "pub.network", "setupad.net", "adpushup.com", "kargo.com", "seedtag.com", "improvedigital.com",
+        "richaudience.com", "adsco.re", "adup-tech.com", "plista.com", "ligatus.com", "adocean.pl"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "popads.net", "popcash.net", "propellerads.com", "propellerclick.com", "adsterra.com", "adsterratech.com",
+        "exoclick.com", "exosrv.com", "juicyads.com", "trafficjunky.net", "hilltopads.net", "adcash.com",
+        "onclickads.net", "onclkds.com", "clickadu.com", "ad-maven.com", "admaven.com", "trafficstars.com",
+        "tsyndicate.com", "popmyads.com", "clickaine.com", "richpush.co", "pushground.com", "evadav.com",
+        "galaksion.com", "monetag.com", "highperformanceformat.com", "profitablecpmrate.com",
+        "realsrv.com", "a-mo.net", "adnium.com", "plugrush.com", "twinrdsrv.com", "pemsrv.com"
+      ],
+      "resourceTypes": [
+        "main_frame", "sub_frame", "script", "image", "xmlhttprequest", "stylesheet",
+        "media", "font", "ping", "websocket", "object", "other"
+      ]
+    }
+  },
+  { "id": 3, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||youtube.com/api/stats/ads" } },
+  { "id": 4, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||youtube.com/pagead/" } },
+  { "id": 5, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||youtube.com/ptracking" } },
+  { "id": 6, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||youtube.com/get_midroll_" } },
+  {
+    "id": 7,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": { "urlFilter": "/pagead/", "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "ping"] }
+  },
+  {
+    "id": 8,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": { "urlFilter": "/prebid", "resourceTypes": ["script"] }
+  },
+  { "id": 9, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||facebook.com/tr/" } },
+  { "id": 10, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||facebook.com/tr?" } },
+  {
+    "id": 11,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": { "urlFilter": "/adsbygoogle.js", "resourceTypes": ["script"] }
+  }
+]

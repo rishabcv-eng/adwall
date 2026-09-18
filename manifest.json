@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "AdWall",
+  "version": "3.0.0",
+  "description": "Blocks ads, trackers, popups, cookie banners and YouTube ads. Auto-updating filters, live stats, element zapper and sponsor-segment skipping.",
+  "minimum_chrome_version": "121",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "scripting",
+    "storage",
+    "unlimitedStorage",
+    "activeTab",
+    "webNavigation",
+    "alarms"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      { "id": "core", "enabled": true, "path": "rules/core.json" },
+      { "id": "lists", "enabled": true, "path": "rules/lists.json" },
+      { "id": "annoyances", "enabled": false, "path": "rules/annoyances.json" }
+    ]
+  },
+  "web_accessible_resources": [
+    { "resources": ["resources/*"], "matches": ["<all_urls>"] }
+  ],
+  "options_page": "options/options.html",
+  "action": {
+    "default_title": "AdWall",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

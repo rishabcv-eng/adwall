@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AdWall</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon48.png" alt="" width="28" height="28">
+    <h1>AdWall</h1>
+    <span class="version" id="version"></span>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card"><div class="num" id="statTotal">0</div><div class="label">blocked all time</div></div>
+      <div class="card"><div class="num" id="statToday">0</div><div class="label">blocked today</div></div>
+      <div class="card"><div class="num" id="statSites">0</div><div class="label">ad servers seen</div></div>
+      <div class="card"><div class="num" id="statSaved">0</div><div class="label">MB not downloaded (est.)</div></div>
+    </section>
+
+    <section class="panel">
+      <h2>Last 14 days</h2>
+      <div class="chart" id="chart"></div>
+    </section>
+
+    <div class="row">
+      <section class="panel">
+        <h2>Most blocked servers</h2>
+        <ol class="list" id="topDomains"><li class="empty">Nothing blocked yet.</li></ol>
+      </section>
+
+      <section class="panel">
+        <h2>Features</h2>
+        <label class="toggle"><input type="checkbox" id="f-annoyances"><span class="track"></span>
+          <span class="text"><b>Block cookie banners &amp; popups</b><small id="annoyanceCount">Cookie notices, newsletter popups, chat widgets</small></span></label>
+        <label class="toggle"><input type="checkbox" id="f-collapse"><span class="track"></span>
+          <span class="text"><b>Collapse blocked boxes</b><small>Remove the empty space a blocked ad leaves behind</small></span></label>
+        <label class="toggle"><input type="checkbox" id="f-youtubeAds"><span class="track"></span>
+          <span class="text"><b>Skip YouTube video ads</b><small>Mute, fast-forward and skip ads the player still starts</small></span></label>
+        <label class="toggle"><input type="checkbox" id="f-sponsorSkip"><span class="track"></span>
+          <span class="text"><b>Skip in-video sponsor segments</b><small>Uses SponsorBlock. Sends only the first 4 characters of a hash of the video id.</small></span></label>
+        <label class="toggle"><input type="checkbox" id="f-autoUpdate"><span class="track"></span>
+          <span class="text"><b>Update filters automatically</b><small>Twice a day, straight from the filter list authors</small></span></label>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Filters</h2>
+      <div class="filters" id="filterInfo"></div>
+      <div class="actions">
+        <button id="updateNow" class="primary">Update filters now</button>
+        <span class="note" id="updateNote"></span>
+      </div>
+    </section>
+
+    <div class="row">
+      <section class="panel">
+        <h2>Paused sites</h2>
+        <ul class="list" id="allowlist"><li class="empty">None. Pause a site from the toolbar popup.</li></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Elements you blocked</h2>
+        <ul class="list" id="custom"><li class="empty">None. Use “Block an element…” in the popup.</li></ul>
+      </section>
+    </div>
+
+    <section class="panel danger">
+      <h2>Reset</h2>
+      <div class="actions">
+        <button id="resetStats" class="ghost">Clear statistics</button>
+        <button id="resetAll" class="ghost">Reset everything</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

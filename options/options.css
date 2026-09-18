@@ -1,0 +1,83 @@
+:root {
+  --bg: #111113;
+  --panel: #18181b;
+  --line: #2a2a30;
+  --text: #ededef;
+  --muted: #8b8b93;
+  --accent: #e5484d;
+  --ok: #30a46c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 2;
+}
+header h1 { font-size: 18px; margin: 0; }
+.version { color: var(--muted); font-size: 12px; }
+
+main { max-width: 980px; margin: 0 auto; padding: 20px 24px 60px; display: flex; flex-direction: column; gap: 16px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.card .num { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; font-variant-numeric: tabular-nums; }
+.card .label { color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 780px) { .row { grid-template-columns: 1fr; } }
+
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin: 0 0 12px; }
+.panel.danger { border-color: #3a2326; }
+
+.chart { display: flex; align-items: flex-end; gap: 6px; height: 120px; }
+.chart .bar { flex: 1; background: var(--accent); border-radius: 3px 3px 0 0; min-height: 2px; position: relative; opacity: .85; }
+.chart .bar:hover { opacity: 1; }
+.chart .bar span { position: absolute; bottom: -18px; left: 0; right: 0; text-align: center; font-size: 10px; color: var(--muted); }
+
+.list { margin: 0; padding: 0; list-style: none; max-height: 260px; overflow: auto; }
+.list li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.list li:last-child { border-bottom: none; }
+.list .host { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.list .count { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12px; }
+.list .empty { color: var(--muted); }
+ol.list { counter-reset: rank; }
+ol.list li::before { counter-increment: rank; content: counter(rank); color: var(--muted); font-size: 11px; width: 18px; flex: none; text-align: right; margin-right: 10px; }
+
+.toggle { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; cursor: pointer; }
+.toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+.toggle .track { position: relative; width: 34px; height: 19px; flex: none; margin-top: 2px; background: var(--line); border-radius: 999px; transition: background .15s; }
+.toggle .track::before { content: ""; position: absolute; top: 2px; left: 2px; width: 15px; height: 15px; background: #fff; border-radius: 50%; transition: transform .15s; }
+.toggle input:checked + .track { background: var(--ok); }
+.toggle input:checked + .track::before { transform: translateX(15px); }
+.toggle .text { display: flex; flex-direction: column; }
+.toggle small { color: var(--muted); }
+
+.filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px 16px; color: var(--muted); font-size: 13px; }
+.filters b { color: var(--text); font-variant-numeric: tabular-nums; }
+
+.actions { display: flex; align-items: center; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+button { font: inherit; border-radius: 8px; padding: 8px 14px; cursor: pointer; border: 1px solid var(--line); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+button.primary:hover { filter: brightness(1.1); }
+button.ghost { background: transparent; color: var(--muted); }
+button.ghost:hover { color: var(--text); }
+button:disabled { opacity: .5; cursor: default; }
+.remove { border: none; background: none; color: var(--muted); cursor: pointer; font-size: 16px; line-height: 1; padding: 2px 6px; }
+.remove:hover { color: var(--accent); }
+.note { color: var(--muted); font-size: 12px; }

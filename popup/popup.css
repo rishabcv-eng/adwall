@@ -1,0 +1,71 @@
+:root {
+  --bg: #111113;
+  --panel: #1c1c1f;
+  --line: #2c2c31;
+  --text: #ededef;
+  --muted: #8b8b93;
+  --accent: #e5484d;
+  --ok: #30a46c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 300px;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; }
+
+main { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+
+.count { text-align: center; padding: 6px 0 4px; }
+.count .num { font-size: 40px; font-weight: 800; letter-spacing: -1px; color: var(--accent); font-variant-numeric: tabular-nums; }
+.count .label { color: var(--muted); }
+
+.site { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.site .host { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-bottom: 6px; }
+.site .row { display: flex; align-items: center; justify-content: space-between; color: var(--muted); }
+
+button {
+  font: inherit;
+  border-radius: 8px;
+  padding: 9px 12px;
+  cursor: pointer;
+  border: 1px solid var(--line);
+}
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+button.primary:hover { filter: brightness(1.1); }
+button.ghost { background: transparent; color: var(--muted); }
+button.ghost:hover { color: var(--text); }
+button:disabled { opacity: .4; cursor: default; }
+
+.note { margin: 0; color: var(--muted); font-size: 12px; text-align: center; min-height: 1em; }
+
+.switch { position: relative; display: inline-block; width: 36px; height: 20px; flex: none; }
+.switch.small { width: 32px; height: 18px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.track {
+  position: absolute; inset: 0; background: var(--line); border-radius: 999px; cursor: pointer; transition: background .15s;
+}
+.track::before {
+  content: ""; position: absolute; left: 2px; top: 2px; width: calc(100% / 2 - 2px); aspect-ratio: 1;
+  background: #fff; border-radius: 50%; transition: transform .15s;
+}
+input:checked + .track { background: var(--ok); }
+input:checked + .track::before { transform: translateX(calc(100% + 0px)); }
+input:disabled + .track { opacity: .4; cursor: default; }
+
+body.off .count .num { color: var(--muted); }
